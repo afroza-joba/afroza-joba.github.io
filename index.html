@@ -74,12 +74,26 @@
 
         .nav-logo span { color: var(--gold); }
 
-        .nav-links {
+        .nav-contact-info {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-contact-info span {
+            font-size: 0.8rem;
+            color: var(--muted);
             display: flex;
             align-items: center;
-            gap: 2.5rem;
-            list-style: none;
+            gap: 0.4rem;
         }
+
+        .nav-contact-info i { color: var(--gold); font-size: 0.75rem; }
+
+        @media (max-width: 768px) { .nav-contact-info { display: none; } }
+
+        /* NAV LINKS */
+        .nav-links {
 
         .nav-links a {
             text-decoration: none;
@@ -489,17 +503,23 @@
 
         .contact-link:last-child { border-bottom: none; }
 
-        .contact-link i {
-            width: 36px;
-            height: 36px;
+        .contact-link .contact-icon {
+            width: 42px;
+            height: 42px;
             background: var(--ink);
             color: var(--gold);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             flex-shrink: 0;
+            transition: background 0.2s;
+        }
+
+        .contact-link:hover .contact-icon {
+            background: var(--gold);
+            color: var(--ink);
         }
 
         .contact-link:hover { color: var(--gold); }
@@ -541,20 +561,24 @@
             align-self: flex-start;
             background: var(--ink);
             color: var(--cream);
-            border: none;
+            border: 2px solid var(--ink);
             font-family: 'DM Sans', sans-serif;
             font-weight: 700;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             letter-spacing: 0.12em;
             text-transform: uppercase;
             padding: 1rem 2.5rem;
             border-radius: 2px;
             cursor: pointer;
-            transition: background 0.2s, transform 0.2s;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+            display: inline-block;
+            min-width: 180px;
+            text-align: center;
         }
 
         .submit-btn:hover {
             background: var(--gold);
+            border-color: var(--gold);
             color: var(--ink);
             transform: translateY(-2px);
         }
@@ -837,6 +861,10 @@
     <nav>
         <div class="nav-inner">
             <a href="#home" class="nav-logo">Afroza <span>Ahmed</span></a>
+            <div class="nav-contact-info">
+                <span><i class="fas fa-envelope"></i> jobaahmed600@gmail.com</span>
+                <span><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</span>
+            </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
@@ -859,22 +887,13 @@
             </div>
 
             <div>
-                <p class="hero-tag fade-up">SEO & Ads Expert</p>
+                <p class="hero-tag fade-up">SEO & Ads Specialist</p>
                 <h1 class="hero-title fade-up delay-1">
                     Afroza Ahmed<br>
-                    <em>SEO Specialist</em><br>
-                    & Digital Marketing Expert
+                    <em>SEO & Ads</em><br>
+                    Specialist
                 </h1>
-                <div class="hero-meta fade-up delay-2">
-                    <div class="hero-meta-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Dhaka, Bangladesh</span>
-                    </div>
-                    <div class="hero-meta-item">
-                        <i class="fas fa-envelope"></i>
-                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="43292c2122222b2e262775737303242e222a2f6d202c2e">[email&#160;protected]</a></span>
-                    </div>
-                </div>
+
                 <p class="hero-desc fade-up delay-3">
                     I believe that data and the right strategy can transform any business. For the past few years, I have been helping both local and international clients achieve their desired sales and organic traffic.
                 </p>
@@ -1073,17 +1092,17 @@
                 <h2 class="section-title">Get In<br>Touch</h2>
                 <p class="contact-desc">Ready to grow your business? Let's talk about your goals and how I can help you get there.</p>
                 <div class="contact-links">
-                    <a href="/cdn-cgi/l/email-protection#7812171a191910151d1c4e4848381f15191114561b1715" class="contact-link">
-                        <i class="fas fa-envelope"></i>
-                        <span class="__cf_email__" data-cfemail="d4bebbb6b5b5bcb9b1b0e2e4e494b3b9b5bdb8fab7bbb9">[email&#160;protected]</span>
+                    <a href="mailto:jobaahmed600@gmail.com" class="contact-link">
+                        <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                        jobaahmed600@gmail.com
                     </a>
-                    <a href="#" target="_blank" class="contact-link">
-                        <i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/afroza-ahmed" target="_blank" class="contact-link">
+                        <span class="contact-icon"><i class="fab fa-linkedin"></i></span>
                         LinkedIn Profile
                     </a>
-                    <a href="https://wa.me/8801XXXXXXXXX" target="_blank" class="contact-link">
-                        <i class="fab fa-whatsapp"></i>
-                        WhatsApp
+                    <a href="https://wa.me/8801700948614" target="_blank" class="contact-link">
+                        <span class="contact-icon"><i class="fab fa-whatsapp"></i></span>
+                        +880 1700-948614
                     </a>
                 </div>
             </div>
@@ -1108,3 +1127,7 @@
                     <label>Message</label>
                     <textarea name="message" rows="5" placeholder="How can I help you?" required></textarea>
                 </div>
+                <div>
+                    <button type="submit" class="submit-btn">Send Message &rarr;</button>
+                </div>
+            </form>
