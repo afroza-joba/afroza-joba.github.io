@@ -559,6 +559,222 @@
             transform: translateY(-2px);
         }
 
+        /* ---- ABOUT ---- */
+        #about {
+            padding: 8rem 2rem;
+            background: var(--ink);
+        }
+
+        .about-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .about-left .section-title { color: var(--white); margin-bottom: 1.5rem; }
+        .about-left .section-label { margin-bottom: 0.8rem; }
+
+        .about-bio {
+            color: rgba(245,240,232,0.65);
+            font-size: 1rem;
+            line-height: 1.9;
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            border: 1px solid rgba(201,168,76,0.2);
+        }
+
+        .about-stat {
+            padding: 1.5rem;
+            text-align: center;
+            border-right: 1px solid rgba(201,168,76,0.2);
+        }
+
+        .about-stat:last-child { border-right: none; }
+
+        .about-stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+
+        .about-stat-label {
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(245,240,232,0.4);
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .skill-item { }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-name {
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(245,240,232,0.7);
+        }
+
+        .skill-pct {
+            font-size: 0.8rem;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .skill-bar {
+            height: 3px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .skill-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            border-radius: 2px;
+            transition: width 1.5s ease;
+        }
+
+        /* ---- BLOG ---- */
+        #blog {
+            padding: 8rem 2rem;
+            background: var(--cream);
+        }
+
+        .blog-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .blog-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .blog-see-all {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--ink);
+            text-decoration: none;
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 2px;
+            transition: color 0.2s;
+        }
+
+        .blog-see-all:hover { color: var(--gold); }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: 3px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .blog-thumb {
+            height: 180px;
+            background: var(--ink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-thumb-1 { background: linear-gradient(135deg, #0d0d0d, #1a2a1a); }
+        .blog-thumb-2 { background: linear-gradient(135deg, #0d0d1a, #0d1a2a); }
+        .blog-thumb-3 { background: linear-gradient(135deg, #1a0d0d, #2a1a0d); }
+
+        .blog-body { padding: 1.8rem; }
+
+        .blog-cat {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.7rem;
+        }
+
+        .blog-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--ink);
+            line-height: 1.4;
+            margin-bottom: 0.8rem;
+        }
+
+        .blog-card p {
+            color: var(--muted);
+            font-size: 0.85rem;
+            line-height: 1.7;
+            margin-bottom: 1.2rem;
+        }
+
+        .blog-meta {
+            font-size: 0.75rem;
+            color: rgba(0,0,0,0.35);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .blog-meta::before {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        @media (max-width: 768px) {
+            .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+            .blog-grid { grid-template-columns: 1fr; }
+            .about-stats { grid-template-columns: repeat(3,1fr); }
+        }
+
         /* ---- FOOTER ---- */
         footer {
             background: var(--ink);
@@ -624,7 +840,9 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#results">Case Studies</a></li>
+                <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact" class="hire-btn">Hire Me</a></li>
             </ul>
         </div>
@@ -654,7 +872,7 @@
                     </div>
                     <div class="hero-meta-item">
                         <i class="fas fa-envelope"></i>
-                        <span>jobaahmed600@gmail.com</span>
+                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="43292c2122222b2e262775737303242e222a2f6d202c2e">[email&#160;protected]</a></span>
                     </div>
                 </div>
                 <p class="hero-desc fade-up delay-3">
@@ -725,6 +943,128 @@
         </div>
     </section>
 
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="about-inner">
+            <div class="about-left">
+                <p class="section-label">Who I Am</p>
+                <h2 class="section-title">SEO & Ads<br><em style="font-style:italic;color:var(--gold)">Specialist</em></h2>
+                <p class="about-bio">
+                    I'm Afroza Ahmed — a results-driven SEO & Ads Specialist based in Dhaka, Bangladesh. I combine deep technical SEO knowledge with high-converting paid advertising strategies to help businesses grow online.<br><br>
+                    Over the past few years, I've worked with local and international clients across e-commerce, services, and B2B industries — consistently delivering measurable results through data-driven campaigns and strategic content planning.
+                </p>
+                <div class="about-stats">
+                    <div class="about-stat">
+                        <div class="about-stat-num">3+</div>
+                        <div class="about-stat-label">Years Exp.</div>
+                    </div>
+                    <div class="about-stat">
+                        <div class="about-stat-num">50+</div>
+                        <div class="about-stat-label">Clients</div>
+                    </div>
+                    <div class="about-stat">
+                        <div class="about-stat-num">4.5x</div>
+                        <div class="about-stat-label">Avg. ROI</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Technical SEO</span>
+                        <span class="skill-pct">95%</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Keyword Research</span>
+                        <span class="skill-pct">92%</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Facebook / Meta Ads</span>
+                        <span class="skill-pct">90%</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Google Ads (PPC)</span>
+                        <span class="skill-pct">88%</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Content Strategy</span>
+                        <span class="skill-pct">85%</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Google Analytics / GSC</span>
+                        <span class="skill-pct">90%</span>
+                    </div>
+                    <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOG -->
+    <section id="blog">
+        <div class="blog-inner">
+            <div class="blog-header">
+                <div>
+                    <p class="section-label">Insights & Tips</p>
+                    <h2 class="section-title">From the Blog</h2>
+                </div>
+                <a href="#" class="blog-see-all">View All Posts →</a>
+            </div>
+
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-thumb blog-thumb-1">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="blog-body">
+                        <p class="blog-cat">SEO</p>
+                        <h3>10 Technical SEO Fixes That Can Double Your Traffic</h3>
+                        <p>Most websites lose rankings due to simple technical issues. Here are the top fixes I use for every client audit.</p>
+                        <div class="blog-meta">March 2026 &nbsp;·&nbsp; 5 min read</div>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-thumb blog-thumb-2">
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                    <div class="blog-body">
+                        <p class="blog-cat">Facebook Ads</p>
+                        <h3>How to Build a High-Converting Meta Ads Funnel in 2026</h3>
+                        <p>Facebook ads still work — but only when your funnel is set up correctly. Here's my step-by-step framework.</p>
+                        <div class="blog-meta">February 2026 &nbsp;·&nbsp; 7 min read</div>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-thumb blog-thumb-3">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="blog-body">
+                        <p class="blog-cat">Google Ads</p>
+                        <h3>Google Performance Max: Is It Worth It for Small Businesses?</h3>
+                        <p>PMax campaigns promise automation and results — but they're not for everyone. Here's my honest breakdown.</p>
+                        <div class="blog-meta">January 2026 &nbsp;·&nbsp; 6 min read</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CONTACT -->
     <section id="contact">
         <div class="contact-inner">
@@ -733,9 +1073,9 @@
                 <h2 class="section-title">Get In<br>Touch</h2>
                 <p class="contact-desc">Ready to grow your business? Let's talk about your goals and how I can help you get there.</p>
                 <div class="contact-links">
-                    <a href="mailto:jobaahmed600@gmail.com" class="contact-link">
+                    <a href="/cdn-cgi/l/email-protection#7812171a191910151d1c4e4848381f15191114561b1715" class="contact-link">
                         <i class="fas fa-envelope"></i>
-                        jobaahmed600@gmail.com
+                        <span class="__cf_email__" data-cfemail="d4bebbb6b5b5bcb9b1b0e2e4e494b3b9b5bdb8fab7bbb9">[email&#160;protected]</span>
                     </a>
                     <a href="#" target="_blank" class="contact-link">
                         <i class="fab fa-linkedin"></i>
@@ -768,15 +1108,3 @@
                     <label>Message</label>
                     <textarea name="message" rows="5" placeholder="How can I help you?" required></textarea>
                 </div>
-                <button type="submit" class="submit-btn">Send Message →</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2026 <span>Afroza Ahmed</span>. All Rights Reserved.</p>
-    </footer>
-
-</body>
-</html>
