@@ -4,13 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Afroza Ahmed | SEO & Ads Specialist</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
         :root {
             --ink: #0d0d0d;
             --cream: #f5f0e8;
@@ -22,1112 +18,551 @@
         }
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'DM Sans', sans-serif;
+            font-family: 'DM Sans', 'Segoe UI', Tahoma, sans-serif;
             background-color: var(--cream);
             color: var(--ink);
             overflow-x: hidden;
         }
 
-        /* --- NOISE TEXTURE OVERLAY --- */
-        body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-            pointer-events: none;
-            z-index: 9999;
-            opacity: 0.5;
-        }
-
-        /* ---- NAV ---- */
+        /* NAV */
         nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(245, 240, 232, 0.88);
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(245,240,232,0.92);
             backdrop-filter: blur(14px);
-            border-bottom: 1px solid rgba(201, 168, 76, 0.2);
-            padding: 1.1rem 0;
+            border-bottom: 1px solid rgba(201,168,76,0.2);
+            padding: 1rem 0;
         }
-
         .nav-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            max-width: 1100px; margin: 0 auto; padding: 0 2rem;
+            display: flex; justify-content: space-between; align-items: center; gap: 1rem;
         }
-
         .nav-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            font-weight: 900;
-            letter-spacing: 0.04em;
-            color: var(--ink);
-            text-decoration: none;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.4rem; font-weight: 900; letter-spacing: 0.04em;
+            color: var(--ink); text-decoration: none; white-space: nowrap;
         }
-
         .nav-logo span { color: var(--gold); }
-
-        .nav-contact-info {
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-        }
-
+        .nav-contact-info { display: flex; gap: 1.5rem; align-items: center; }
         .nav-contact-info span {
-            font-size: 0.8rem;
-            color: var(--muted);
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
+            font-size: 0.8rem; color: var(--muted);
+            display: flex; align-items: center; gap: 0.4rem;
         }
-
-        .nav-contact-info i { color: var(--gold); font-size: 0.75rem; }
-
-        @media (max-width: 768px) { .nav-contact-info { display: none; } }
-
-        /* NAV LINKS */
-        .nav-links {
-
+        .nav-icon { color: var(--gold); }
+        .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
         .nav-links a {
-            text-decoration: none;
-            color: var(--muted);
-            font-size: 0.9rem;
-            font-weight: 500;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            transition: color 0.2s;
+            text-decoration: none; color: var(--muted); font-size: 0.85rem;
+            font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s;
         }
-
         .nav-links a:hover { color: var(--ink); }
-
         .nav-links .hire-btn {
-            background: var(--ink);
-            color: var(--cream) !important;
-            padding: 0.6rem 1.4rem;
-            border-radius: 2px;
-            transition: background 0.2s, color 0.2s !important;
+            background: var(--ink); color: var(--cream) !important;
+            padding: 0.55rem 1.3rem; border-radius: 2px; transition: background 0.2s !important;
         }
+        .nav-links .hire-btn:hover { background: var(--gold); color: var(--ink) !important; }
 
-        .nav-links .hire-btn:hover {
-            background: var(--gold);
-            color: var(--ink) !important;
-        }
-
-        /* ---- HERO ---- */
+        /* HERO */
         #home {
-            min-height: 100vh;
-            background-color: var(--ink);
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
+            min-height: 100vh; background-color: var(--ink);
+            display: flex; align-items: center; position: relative; overflow: hidden;
         }
-
-        .hero-grid-overlay {
-            position: absolute;
-            inset: 0;
+        .hero-grid {
+            position: absolute; inset: 0;
             background-image:
                 linear-gradient(rgba(201,168,76,0.06) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(201,168,76,0.06) 1px, transparent 1px);
             background-size: 60px 60px;
         }
-
         .hero-glow {
-            position: absolute;
-            width: 600px;
-            height: 600px;
+            position: absolute; width: 600px; height: 600px;
             background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
-            top: -100px;
-            right: -100px;
-            pointer-events: none;
+            top: -100px; right: -100px; pointer-events: none;
         }
-
         .hero-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 6rem 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 5rem;
-            align-items: center;
-            position: relative;
-            z-index: 2;
+            max-width: 1100px; margin: 0 auto; padding: 6rem 2rem;
+            display: grid; grid-template-columns: 1fr 1.5fr;
+            gap: 5rem; align-items: center; position: relative; z-index: 2;
         }
-
-        .hero-image-wrap {
-            position: relative;
-        }
-
+        .hero-image-wrap { position: relative; }
         .hero-image-wrap::before {
-            content: '';
-            position: absolute;
-            inset: -12px;
-            border: 1px solid rgba(201,168,76,0.3);
-            border-radius: 4px;
-            transform: rotate(2deg);
+            content: ''; position: absolute; inset: -12px;
+            border: 1px solid rgba(201,168,76,0.3); border-radius: 4px; transform: rotate(2deg);
         }
-
         .hero-image-wrap img {
-            width: 100%;
-            max-width: 340px;
-            border-radius: 4px;
-            display: block;
-            filter: grayscale(20%);
-            object-fit: cover;
-            aspect-ratio: 3/4;
+            width: 100%; max-width: 340px; border-radius: 4px; display: block;
+            filter: grayscale(20%); object-fit: cover; aspect-ratio: 3/4;
         }
-
         .hero-tag {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 0.75rem;
-            font-weight: 500;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
+            font-size: 0.75rem; font-weight: 500; letter-spacing: 0.18em;
+            text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem;
+            display: flex; align-items: center; gap: 0.75rem;
         }
-
-        .hero-tag::before {
-            content: '';
-            display: block;
-            width: 32px;
-            height: 1px;
-            background: var(--gold);
-        }
-
+        .hero-tag::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
         .hero-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.8rem, 5vw, 4.2rem);
-            font-weight: 900;
-            line-height: 1.1;
-            color: var(--white);
-            margin-bottom: 1.8rem;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2.8rem, 5vw, 4.2rem); font-weight: 900;
+            line-height: 1.1; color: var(--white); margin-bottom: 2rem;
         }
-
-        .hero-title em {
-            font-style: italic;
-            color: var(--gold);
-        }
-
-        .hero-meta {
-            display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
-            margin-bottom: 2rem;
-        }
-
-        .hero-meta-item {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            color: rgba(245,240,232,0.55);
-            font-size: 0.9rem;
-        }
-
-        .hero-meta-item i { color: var(--gold); width: 16px; }
-
+        .hero-title em { font-style: italic; color: var(--gold); }
         .hero-desc {
-            color: rgba(245,240,232,0.7);
-            font-size: 1rem;
-            line-height: 1.8;
-            font-weight: 300;
-            max-width: 520px;
-            margin-bottom: 2.5rem;
+            color: rgba(245,240,232,0.7); font-size: 1rem;
+            line-height: 1.8; font-weight: 300; max-width: 520px; margin-bottom: 2.5rem;
         }
-
         .hero-cta {
-            display: inline-block;
-            background: var(--gold);
-            color: var(--ink);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.85rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            padding: 1rem 2.4rem;
-            border-radius: 2px;
-            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-block; background: var(--gold); color: var(--ink);
+            text-decoration: none; font-weight: 700; font-size: 0.85rem;
+            letter-spacing: 0.1em; text-transform: uppercase;
+            padding: 1rem 2.4rem; border-radius: 2px; transition: transform 0.2s, box-shadow 0.2s;
         }
+        .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,168,76,0.35); }
 
-        .hero-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(201,168,76,0.35);
-        }
-
-        /* ---- SECTION COMMON ---- */
+        /* SECTION COMMON */
         .section-label {
-            font-size: 0.7rem;
-            font-weight: 500;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            color: var(--gold);
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            margin-bottom: 0.8rem;
+            font-size: 0.7rem; font-weight: 500; letter-spacing: 0.22em;
+            text-transform: uppercase; color: var(--gold);
+            display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;
         }
-
-        .section-label::before {
-            content: '';
-            display: block;
-            width: 24px;
-            height: 1px;
-            background: var(--gold);
-        }
-
+        .section-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
         .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 3.5vw, 2.8rem);
-            font-weight: 900;
-            line-height: 1.15;
-            color: var(--ink);
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 900; line-height: 1.15; color: var(--ink);
         }
 
-        /* ---- SERVICES ---- */
-        #services {
-            padding: 8rem 2rem;
-            background: var(--cream);
-        }
-
-        .services-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
+        /* SERVICES */
+        #services { padding: 8rem 2rem; background: var(--cream); }
+        .services-inner { max-width: 1100px; margin: 0 auto; }
         .services-header {
-            margin-bottom: 4rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            flex-wrap: wrap;
-            gap: 1rem;
+            margin-bottom: 4rem; display: flex;
+            justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem;
         }
-
-        .services-header .section-title { color: var(--ink); }
-
-        .services-subtitle {
-            color: var(--muted);
-            font-size: 0.9rem;
-            max-width: 280px;
-            line-height: 1.6;
-            text-align: right;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0;
-            border: 1px solid rgba(0,0,0,0.1);
-        }
-
+        .services-subtitle { color: var(--muted); font-size: 0.9rem; max-width: 280px; line-height: 1.6; text-align: right; }
+        .services-grid { display: grid; grid-template-columns: repeat(3,1fr); border: 1px solid rgba(0,0,0,0.1); }
         .service-card {
-            padding: 3rem 2.5rem;
-            border-right: 1px solid rgba(0,0,0,0.1);
-            background: var(--card-bg);
-            transition: background 0.3s;
-            position: relative;
-            overflow: hidden;
+            padding: 3rem 2.5rem; border-right: 1px solid rgba(0,0,0,0.1);
+            background: var(--card-bg); transition: background 0.3s; position: relative; overflow: hidden;
         }
-
         .service-card:last-child { border-right: none; }
-
         .service-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gold);
-            transition: width 0.4s ease;
+            content: ''; position: absolute; bottom: 0; left: 0;
+            width: 0; height: 2px; background: var(--gold); transition: width 0.4s ease;
         }
-
         .service-card:hover { background: var(--white); }
         .service-card:hover::after { width: 100%; }
-
-        .service-icon {
-            font-size: 2rem;
-            color: var(--gold);
-            margin-bottom: 1.5rem;
-        }
-
+        .service-icon { font-size: 2rem; margin-bottom: 1.5rem; }
         .service-num {
-            position: absolute;
-            top: 1.5rem;
-            right: 2rem;
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: rgba(0,0,0,0.04);
-            line-height: 1;
+            position: absolute; top: 1.5rem; right: 2rem;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 3.5rem; font-weight: 900; color: rgba(0,0,0,0.04); line-height: 1;
         }
-
         .service-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 0.8rem;
-            color: var(--ink);
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem; font-weight: 700; margin-bottom: 0.8rem; color: var(--ink);
         }
+        .service-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
 
-        .service-card p {
-            color: var(--muted);
-            font-size: 0.9rem;
-            line-height: 1.7;
-        }
-
-        /* ---- RESULTS ---- */
-        #results {
-            padding: 8rem 2rem;
-            background: var(--ink);
-        }
-
-        .results-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .results-inner .section-title { color: var(--white); }
-        .results-inner .section-label { margin-bottom: 0.8rem; }
-
-        .results-header {
-            margin-bottom: 4rem;
-        }
-
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2px;
-            background: rgba(201,168,76,0.15);
-        }
-
-        .result-card {
-            background: #141414;
-            padding: 3.5rem;
-            position: relative;
-            overflow: hidden;
-            transition: background 0.3s;
-        }
-
-        .result-card:hover { background: #1a1a1a; }
-
-        .result-stat {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 6vw, 5rem);
-            font-weight: 900;
-            color: var(--gold);
-            line-height: 1;
-            margin-bottom: 0.5rem;
-        }
-
-        .result-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 1rem;
-        }
-
-        .result-card p {
-            color: rgba(245,240,232,0.5);
-            font-size: 0.9rem;
-            line-height: 1.7;
-            font-weight: 300;
-        }
-
-        .result-badge {
-            display: inline-block;
-            margin-top: 1.5rem;
-            font-size: 0.72rem;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--gold);
-            border: 1px solid rgba(201,168,76,0.35);
-            padding: 0.35rem 0.9rem;
-            border-radius: 2px;
-        }
-
-        /* ---- CONTACT ---- */
-        #contact {
-            padding: 8rem 2rem;
-            background: var(--cream);
-        }
-
-        .contact-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 6rem;
-            align-items: start;
-        }
-
-        .contact-left .section-title { margin-bottom: 1.5rem; }
-
-        .contact-desc {
-            color: var(--muted);
-            font-size: 0.95rem;
-            line-height: 1.8;
-            margin-bottom: 2.5rem;
-        }
-
-        .contact-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .contact-link {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            text-decoration: none;
-            color: var(--ink);
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.2s;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid rgba(0,0,0,0.08);
-        }
-
-        .contact-link:last-child { border-bottom: none; }
-
-        .contact-link .contact-icon {
-            width: 42px;
-            height: 42px;
-            background: var(--ink);
-            color: var(--gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            flex-shrink: 0;
-            transition: background 0.2s;
-        }
-
-        .contact-link:hover .contact-icon {
-            background: var(--gold);
-            color: var(--ink);
-        }
-
-        .contact-link:hover { color: var(--gold); }
-
-        /* FORM */
-        .contact-form { display: flex; flex-direction: column; gap: 1.5rem; }
-
-        .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
-
-        .form-group label {
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--muted);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            background: transparent;
-            border: none;
-            border-bottom: 1.5px solid rgba(0,0,0,0.2);
-            padding: 0.75rem 0;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1rem;
-            color: var(--ink);
-            outline: none;
-            transition: border-color 0.2s;
-            resize: none;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder { color: rgba(0,0,0,0.25); }
-
-        .form-group input:focus,
-        .form-group textarea:focus { border-bottom-color: var(--gold); }
-
-        .submit-btn {
-            align-self: flex-start;
-            background: var(--ink);
-            color: var(--cream);
-            border: 2px solid var(--ink);
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 700;
-            font-size: 0.85rem;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            padding: 1rem 2.5rem;
-            border-radius: 2px;
-            cursor: pointer;
-            transition: background 0.2s, color 0.2s, transform 0.2s;
-            display: inline-block;
-            min-width: 180px;
-            text-align: center;
-        }
-
-        .submit-btn:hover {
-            background: var(--gold);
-            border-color: var(--gold);
-            color: var(--ink);
-            transform: translateY(-2px);
-        }
-
-        /* ---- ABOUT ---- */
-        #about {
-            padding: 8rem 2rem;
-            background: var(--ink);
-        }
-
+        /* ABOUT */
+        #about { padding: 8rem 2rem; background: var(--ink); }
         .about-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 6rem;
-            align-items: center;
+            max-width: 1100px; margin: 0 auto;
+            display: grid; grid-template-columns: 1fr 1.2fr; gap: 6rem; align-items: center;
         }
-
-        .about-left .section-title { color: var(--white); margin-bottom: 1.5rem; }
-        .about-left .section-label { margin-bottom: 0.8rem; }
-
         .about-bio {
-            color: rgba(245,240,232,0.65);
-            font-size: 1rem;
-            line-height: 1.9;
-            font-weight: 300;
-            margin-bottom: 2.5rem;
+            color: rgba(245,240,232,0.65); font-size: 1rem;
+            line-height: 1.9; font-weight: 300; margin-bottom: 2.5rem;
         }
-
-        .about-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0;
-            border: 1px solid rgba(201,168,76,0.2);
-        }
-
-        .about-stat {
-            padding: 1.5rem;
-            text-align: center;
-            border-right: 1px solid rgba(201,168,76,0.2);
-        }
-
+        .about-stats { display: grid; grid-template-columns: repeat(3,1fr); border: 1px solid rgba(201,168,76,0.2); }
+        .about-stat { padding: 1.5rem; text-align: center; border-right: 1px solid rgba(201,168,76,0.2); }
         .about-stat:last-child { border-right: none; }
-
         .about-stat-num {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: var(--gold);
-            line-height: 1;
-            margin-bottom: 0.4rem;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem; font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: 0.4rem;
+        }
+        .about-stat-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,240,232,0.4); }
+        .skills-grid { display: flex; flex-direction: column; gap: 1.4rem; }
+        .skill-header { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
+        .skill-name { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(245,240,232,0.7); }
+        .skill-pct { font-size: 0.8rem; color: var(--gold); font-weight: 700; }
+        .skill-bar { height: 3px; background: rgba(255,255,255,0.08); border-radius: 2px; overflow: hidden; }
+        .skill-fill { height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-light)); border-radius: 2px; }
+
+        /* RESULTS */
+        #results { padding: 8rem 2rem; background: var(--cream); }
+        .results-inner { max-width: 1100px; margin: 0 auto; }
+        .results-header { margin-bottom: 4rem; }
+        .results-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2rem; }
+        .result-card {
+            background: var(--ink); padding: 3.5rem; border-radius: 3px; transition: transform 0.3s;
+        }
+        .result-card:hover { transform: translateY(-4px); }
+        .result-stat {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(3rem, 6vw, 5rem); font-weight: 900;
+            color: var(--gold); line-height: 1; margin-bottom: 0.5rem;
+        }
+        .result-card h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.3rem; font-weight: 700; color: var(--white); margin-bottom: 1rem;
+        }
+        .result-card p { color: rgba(245,240,232,0.5); font-size: 0.9rem; line-height: 1.7; font-weight: 300; }
+        .result-badge {
+            display: inline-block; margin-top: 1.5rem; font-size: 0.72rem;
+            font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+            color: var(--gold); border: 1px solid rgba(201,168,76,0.35); padding: 0.35rem 0.9rem; border-radius: 2px;
         }
 
-        .about-stat-label {
-            font-size: 0.72rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: rgba(245,240,232,0.4);
-        }
-
-        .skills-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-        }
-
-        .skill-item { }
-
-        .skill-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
-        }
-
-        .skill-name {
-            font-size: 0.82rem;
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: rgba(245,240,232,0.7);
-        }
-
-        .skill-pct {
-            font-size: 0.8rem;
-            color: var(--gold);
-            font-weight: 700;
-        }
-
-        .skill-bar {
-            height: 3px;
-            background: rgba(255,255,255,0.08);
-            border-radius: 2px;
-            overflow: hidden;
-        }
-
-        .skill-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--gold), var(--gold-light));
-            border-radius: 2px;
-            transition: width 1.5s ease;
-        }
-
-        /* ---- BLOG ---- */
-        #blog {
-            padding: 8rem 2rem;
-            background: var(--cream);
-        }
-
-        .blog-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
+        /* BLOG */
+        #blog { padding: 8rem 2rem; background: var(--card-bg); }
+        .blog-inner { max-width: 1100px; margin: 0 auto; }
         .blog-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            margin-bottom: 4rem;
-            flex-wrap: wrap;
-            gap: 1rem;
+            display: flex; justify-content: space-between; align-items: flex-end;
+            margin-bottom: 4rem; flex-wrap: wrap; gap: 1rem;
         }
-
         .blog-see-all {
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--ink);
-            text-decoration: none;
-            border-bottom: 1px solid var(--gold);
-            padding-bottom: 2px;
-            transition: color 0.2s;
+            font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+            color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 2px;
         }
-
         .blog-see-all:hover { color: var(--gold); }
-
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .blog-card {
-            background: var(--white);
-            border-radius: 3px;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .blog-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .blog-thumb {
-            height: 180px;
-            background: var(--ink);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            color: var(--gold);
-            position: relative;
-            overflow: hidden;
-        }
-
+        .blog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; }
+        .blog-card { background: var(--white); border-radius: 3px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
+        .blog-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .blog-thumb { height: 160px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
         .blog-thumb-1 { background: linear-gradient(135deg, #0d0d0d, #1a2a1a); }
         .blog-thumb-2 { background: linear-gradient(135deg, #0d0d1a, #0d1a2a); }
         .blog-thumb-3 { background: linear-gradient(135deg, #1a0d0d, #2a1a0d); }
-
         .blog-body { padding: 1.8rem; }
-
-        .blog-cat {
-            font-size: 0.68rem;
-            font-weight: 700;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 0.7rem;
-        }
-
+        .blog-cat { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem; }
         .blog-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--ink);
-            line-height: 1.4;
-            margin-bottom: 0.8rem;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.05rem; font-weight: 700; color: var(--ink); line-height: 1.4; margin-bottom: 0.8rem;
         }
+        .blog-card p { color: var(--muted); font-size: 0.85rem; line-height: 1.7; margin-bottom: 1.2rem; }
+        .blog-meta { font-size: 0.75rem; color: rgba(0,0,0,0.35); display: flex; align-items: center; gap: 0.5rem; }
+        .blog-meta::before { content: ''; display: block; width: 20px; height: 1px; background: var(--gold); }
 
-        .blog-card p {
-            color: var(--muted);
-            font-size: 0.85rem;
-            line-height: 1.7;
-            margin-bottom: 1.2rem;
+        /* CONTACT */
+        #contact { padding: 8rem 2rem; background: var(--cream); }
+        .contact-inner {
+            max-width: 1100px; margin: 0 auto;
+            display: grid; grid-template-columns: 1fr 1.5fr; gap: 6rem; align-items: start;
         }
-
-        .blog-meta {
-            font-size: 0.75rem;
-            color: rgba(0,0,0,0.35);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        .contact-left .section-title { margin-bottom: 1.5rem; }
+        .contact-desc { color: var(--muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 2.5rem; }
+        .contact-links { display: flex; flex-direction: column; }
+        .contact-link {
+            display: flex; align-items: center; gap: 1rem;
+            text-decoration: none; color: var(--ink); font-size: 0.9rem; font-weight: 500;
+            transition: color 0.2s; padding: 1rem 0; border-bottom: 1px solid rgba(0,0,0,0.08);
         }
-
-        .blog-meta::before {
-            content: '';
-            display: block;
-            width: 20px;
-            height: 1px;
-            background: var(--gold);
+        .contact-link:last-child { border-bottom: none; }
+        .contact-link:hover { color: var(--gold); }
+        .contact-icon {
+            width: 42px; height: 42px; background: var(--ink); color: var(--gold);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 1rem; flex-shrink: 0; font-weight: 700;
+            transition: background 0.2s, color 0.2s;
         }
-
-        @media (max-width: 768px) {
-            .about-inner { grid-template-columns: 1fr; gap: 3rem; }
-            .blog-grid { grid-template-columns: 1fr; }
-            .about-stats { grid-template-columns: repeat(3,1fr); }
+        .contact-link:hover .contact-icon { background: var(--gold); color: var(--ink); }
+        .contact-form { display: flex; flex-direction: column; gap: 1.5rem; }
+        .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+        .form-group label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+        .form-group input, .form-group textarea {
+            background: transparent; border: none; border-bottom: 1.5px solid rgba(0,0,0,0.2);
+            padding: 0.75rem 0; font-family: inherit; font-size: 1rem;
+            color: var(--ink); outline: none; transition: border-color 0.2s; resize: none;
         }
-
-        /* ---- FOOTER ---- */
-        footer {
-            background: var(--ink);
-            padding: 2rem;
-            text-align: center;
-            color: rgba(245,240,232,0.3);
-            font-size: 0.8rem;
-            letter-spacing: 0.06em;
+        .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(0,0,0,0.25); }
+        .form-group input:focus, .form-group textarea:focus { border-bottom-color: var(--gold); }
+        .submit-btn {
+            align-self: flex-start; background: var(--ink); color: var(--cream);
+            border: 2px solid var(--ink); font-family: inherit; font-weight: 700;
+            font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase;
+            padding: 1rem 2.5rem; border-radius: 2px; cursor: pointer;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+            display: inline-block; min-width: 200px; text-align: center;
         }
+        .submit-btn:hover { background: var(--gold); border-color: var(--gold); color: var(--ink); transform: translateY(-2px); }
 
+        /* FOOTER */
+        footer { background: var(--ink); padding: 2rem; text-align: center; color: rgba(245,240,232,0.3); font-size: 0.8rem; }
         footer span { color: var(--gold); }
 
-        /* ---- ANIMATIONS ---- */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .fade-up {
-            opacity: 0;
-            animation: fadeUp 0.7s ease forwards;
-        }
-
+        /* ANIMATIONS */
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-up { opacity: 0; animation: fadeUp 0.7s ease forwards; }
         .delay-1 { animation-delay: 0.15s; }
         .delay-2 { animation-delay: 0.3s; }
         .delay-3 { animation-delay: 0.45s; }
-        .delay-4 { animation-delay: 0.6s; }
 
-        /* ---- RESPONSIVE ---- */
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-
-            .hero-inner {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-                padding: 4rem 1.5rem;
-                text-align: center;
-            }
-
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .nav-contact-info, .nav-links { display: none; }
+            .hero-inner { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; text-align: center; }
             .hero-image-wrap img { max-width: 260px; margin: 0 auto; }
             .hero-tag { justify-content: center; }
-            .hero-meta { align-items: center; }
-            .hero-desc { margin: 0 auto 2.5rem; }
-
             .services-grid { grid-template-columns: 1fr; }
             .service-card { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.1); }
             .service-card:last-child { border-bottom: none; }
-
-            .results-grid { grid-template-columns: 1fr; }
-
+            .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+            .results-grid, .blog-grid { grid-template-columns: 1fr; }
             .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
-            .services-subtitle { text-align: left; }
             .services-header { flex-direction: column; }
+            .services-subtitle { text-align: left; }
         }
     </style>
 </head>
 <body>
 
-    <!-- NAV -->
-    <nav>
-        <div class="nav-inner">
-            <a href="#home" class="nav-logo">Afroza <span>Ahmed</span></a>
-            <div class="nav-contact-info">
-                <span><i class="fas fa-envelope"></i> jobaahmed600@gmail.com</span>
-                <span><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#results">Case Studies</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact" class="hire-btn">Hire Me</a></li>
-            </ul>
+<!-- NAV -->
+<nav>
+    <div class="nav-inner">
+        <a href="#home" class="nav-logo">Afroza <span>Ahmed</span></a>
+        <div class="nav-contact-info">
+            <span><span class="nav-icon">✉</span> jobaahmed600@gmail.com</span>
+            <span><span class="nav-icon">📍</span> Dhaka, Bangladesh</span>
         </div>
-    </nav>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#results">Case Studies</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact" class="hire-btn">Hire Me</a></li>
+        </ul>
+    </div>
+</nav>
 
-    <!-- HERO -->
-    <section id="home">
-        <div class="hero-grid-overlay"></div>
-        <div class="hero-glow"></div>
-        <div class="hero-inner">
+<!-- HERO -->
+<section id="home">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-inner">
+        <div class="hero-image-wrap fade-up">
+            <img src="joba.jpg" alt="Afroza Ahmed">
+        </div>
+        <div>
+            <p class="hero-tag fade-up">SEO &amp; Ads Specialist</p>
+            <h1 class="hero-title fade-up delay-1">
+                Afroza Ahmed<br>
+                <em>SEO &amp; Ads</em><br>
+                Specialist
+            </h1>
+            <p class="hero-desc fade-up delay-2">
+                I believe that data and the right strategy can transform any business. For the past few years, I have been helping both local and international clients achieve their desired sales and organic traffic.
+            </p>
+            <a href="#contact" class="hero-cta fade-up delay-3">Get In Touch</a>
+        </div>
+    </div>
+</section>
 
-            <div class="hero-image-wrap fade-up">
-                <img src="joba.jpg" alt="Afroza Ahmed">
-            </div>
-
+<!-- SERVICES -->
+<section id="services">
+    <div class="services-inner">
+        <div class="services-header">
             <div>
-                <p class="hero-tag fade-up">SEO & Ads Specialist</p>
-                <h1 class="hero-title fade-up delay-1">
-                    Afroza Ahmed<br>
-                    <em>SEO & Ads</em><br>
-                    Specialist
-                </h1>
-
-                <p class="hero-desc fade-up delay-3">
-                    I believe that data and the right strategy can transform any business. For the past few years, I have been helping both local and international clients achieve their desired sales and organic traffic.
-                </p>
-                <a href="#contact" class="hero-cta fade-up delay-4">Get In Touch</a>
+                <p class="section-label">What I Do</p>
+                <h2 class="section-title">What I<br>Excel At</h2>
             </div>
-
+            <p class="services-subtitle">Specialized services that drive measurable growth for your business.</p>
         </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services">
-        <div class="services-inner">
-            <div class="services-header">
-                <div>
-                    <p class="section-label">What I Do</p>
-                    <h2 class="section-title">What I<br>Excel At</h2>
-                </div>
-                <p class="services-subtitle">Specialized services that drive measurable growth for your business.</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="service-num">01</span>
+                <div class="service-icon">🔍</div>
+                <h3>SEO Optimization</h3>
+                <p>Keyword research and Technical SEO to rank you on the first page of Google.</p>
             </div>
-
-            <div class="services-grid">
-                <div class="service-card">
-                    <span class="service-num">01</span>
-                    <div class="service-icon"><i class="fas fa-search"></i></div>
-                    <h3>SEO Optimization</h3>
-                    <p>Keyword research and Technical SEO to rank you on the first page of Google.</p>
-                </div>
-                <div class="service-card">
-                    <span class="service-num">02</span>
-                    <div class="service-icon"><i class="fab fa-facebook"></i></div>
-                    <h3>Facebook Ads</h3>
-                    <p>High-converting Meta campaigns targeting the right audience for maximum ROI.</p>
-                </div>
-                <div class="service-card">
-                    <span class="service-num">03</span>
-                    <div class="service-icon"><i class="fab fa-google"></i></div>
-                    <h3>Google Ads (PPC)</h3>
-                    <p>ROI-focused Search and Display ads to capture high-intent customers.</p>
-                </div>
+            <div class="service-card">
+                <span class="service-num">02</span>
+                <div class="service-icon">📘</div>
+                <h3>Facebook Ads</h3>
+                <p>High-converting Meta campaigns targeting the right audience for maximum ROI.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-num">03</span>
+                <div class="service-icon">📢</div>
+                <h3>Google Ads (PPC)</h3>
+                <p>ROI-focused Search and Display ads to capture high-intent customers.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- RESULTS -->
-    <section id="results">
-        <div class="results-inner">
-            <div class="results-header">
-                <p class="section-label">Proof of Work</p>
-                <h2 class="section-title">Case Studies<br>& Results</h2>
-            </div>
-
-            <div class="results-grid">
-                <div class="result-card">
-                    <div class="result-stat">+150%</div>
-                    <h3>E-commerce Sales Boost</h3>
-                    <p>Increased monthly revenue using targeted Facebook Ads and Google Performance Max campaigns.</p>
-                    <span class="result-badge">ROI: 4.5x</span>
+<!-- ABOUT -->
+<section id="about">
+    <div class="about-inner">
+        <div class="about-left">
+            <p class="section-label">Who I Am</p>
+            <h2 class="section-title" style="color:var(--white); margin-bottom:1.5rem;">SEO &amp; Ads<br><em style="font-style:italic;color:var(--gold)">Specialist</em></h2>
+            <p class="about-bio">
+                I'm Afroza Ahmed — a results-driven SEO &amp; Ads Specialist based in Dhaka, Bangladesh. I combine deep technical SEO knowledge with high-converting paid advertising strategies to help businesses grow online.<br><br>
+                Over the past few years, I've worked with local and international clients across e-commerce, services, and B2B industries — consistently delivering measurable results through data-driven campaigns and strategic content planning.
+            </p>
+            <div class="about-stats">
+                <div class="about-stat">
+                    <div class="about-stat-num">3+</div>
+                    <div class="about-stat-label">Years Exp.</div>
                 </div>
-                <div class="result-card">
-                    <div class="result-stat">+300%</div>
-                    <h3>Organic Traffic Growth</h3>
-                    <p>Ranked top 3 for highly competitive keywords within 6 months through technical SEO and content clustering.</p>
-                    <span class="result-badge">6 Month Result</span>
+                <div class="about-stat">
+                    <div class="about-stat-num">50+</div>
+                    <div class="about-stat-label">Clients</div>
+                </div>
+                <div class="about-stat">
+                    <div class="about-stat-num">4.5x</div>
+                    <div class="about-stat-label">Avg. ROI</div>
                 </div>
             </div>
         </div>
-    </section>
+        <div class="skills-grid">
+            <div>
+                <div class="skill-header"><span class="skill-name">Technical SEO</span><span class="skill-pct">95%</span></div>
+                <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+            </div>
+            <div>
+                <div class="skill-header"><span class="skill-name">Keyword Research</span><span class="skill-pct">92%</span></div>
+                <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+            </div>
+            <div>
+                <div class="skill-header"><span class="skill-name">Facebook / Meta Ads</span><span class="skill-pct">90%</span></div>
+                <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+            </div>
+            <div>
+                <div class="skill-header"><span class="skill-name">Google Ads (PPC)</span><span class="skill-pct">88%</span></div>
+                <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+            </div>
+            <div>
+                <div class="skill-header"><span class="skill-name">Content Strategy</span><span class="skill-pct">85%</span></div>
+                <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+            </div>
+            <div>
+                <div class="skill-header"><span class="skill-name">Google Analytics / GSC</span><span class="skill-pct">90%</span></div>
+                <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <!-- ABOUT -->
-    <section id="about">
-        <div class="about-inner">
-            <div class="about-left">
-                <p class="section-label">Who I Am</p>
-                <h2 class="section-title">SEO & Ads<br><em style="font-style:italic;color:var(--gold)">Specialist</em></h2>
-                <p class="about-bio">
-                    I'm Afroza Ahmed — a results-driven SEO & Ads Specialist based in Dhaka, Bangladesh. I combine deep technical SEO knowledge with high-converting paid advertising strategies to help businesses grow online.<br><br>
-                    Over the past few years, I've worked with local and international clients across e-commerce, services, and B2B industries — consistently delivering measurable results through data-driven campaigns and strategic content planning.
-                </p>
-                <div class="about-stats">
-                    <div class="about-stat">
-                        <div class="about-stat-num">3+</div>
-                        <div class="about-stat-label">Years Exp.</div>
-                    </div>
-                    <div class="about-stat">
-                        <div class="about-stat-num">50+</div>
-                        <div class="about-stat-label">Clients</div>
-                    </div>
-                    <div class="about-stat">
-                        <div class="about-stat-num">4.5x</div>
-                        <div class="about-stat-label">Avg. ROI</div>
-                    </div>
+<!-- RESULTS -->
+<section id="results">
+    <div class="results-inner">
+        <div class="results-header">
+            <p class="section-label">Proof of Work</p>
+            <h2 class="section-title">Case Studies &amp; Results</h2>
+        </div>
+        <div class="results-grid">
+            <div class="result-card">
+                <div class="result-stat">+150%</div>
+                <h3>E-commerce Sales Boost</h3>
+                <p>Increased monthly revenue using targeted Facebook Ads and Google Performance Max campaigns.</p>
+                <span class="result-badge">ROI: 4.5x</span>
+            </div>
+            <div class="result-card">
+                <div class="result-stat">+300%</div>
+                <h3>Organic Traffic Growth</h3>
+                <p>Ranked top 3 for highly competitive keywords within 6 months through technical SEO and content clustering.</p>
+                <span class="result-badge">6 Month Result</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+    <div class="blog-inner">
+        <div class="blog-header">
+            <div>
+                <p class="section-label">Insights &amp; Tips</p>
+                <h2 class="section-title">From the Blog</h2>
+            </div>
+            <a href="#" class="blog-see-all">View All Posts →</a>
+        </div>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <div class="blog-thumb blog-thumb-1">🔍</div>
+                <div class="blog-body">
+                    <p class="blog-cat">SEO</p>
+                    <h3>10 Technical SEO Fixes That Can Double Your Traffic</h3>
+                    <p>Most websites lose rankings due to simple technical issues. Here are the top fixes I use for every client audit.</p>
+                    <div class="blog-meta">March 2026 &nbsp;·&nbsp; 5 min read</div>
                 </div>
             </div>
-
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name">Technical SEO</span>
-                        <span class="skill-pct">95%</span>
-                    </div>
-                    <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+            <div class="blog-card">
+                <div class="blog-thumb blog-thumb-2">📘</div>
+                <div class="blog-body">
+                    <p class="blog-cat">Facebook Ads</p>
+                    <h3>How to Build a High-Converting Meta Ads Funnel in 2026</h3>
+                    <p>Facebook ads still work — but only when your funnel is set up correctly. Here's my step-by-step framework.</p>
+                    <div class="blog-meta">February 2026 &nbsp;·&nbsp; 7 min read</div>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name">Keyword Research</span>
-                        <span class="skill-pct">92%</span>
-                    </div>
-                    <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name">Facebook / Meta Ads</span>
-                        <span class="skill-pct">90%</span>
-                    </div>
-                    <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name">Google Ads (PPC)</span>
-                        <span class="skill-pct">88%</span>
-                    </div>
-                    <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name">Content Strategy</span>
-                        <span class="skill-pct">85%</span>
-                    </div>
-                    <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name">Google Analytics / GSC</span>
-                        <span class="skill-pct">90%</span>
-                    </div>
-                    <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-thumb blog-thumb-3">📢</div>
+                <div class="blog-body">
+                    <p class="blog-cat">Google Ads</p>
+                    <h3>Google Performance Max: Is It Worth It for Small Businesses?</h3>
+                    <p>PMax campaigns promise automation and results — but they're not for everyone. Here's my honest breakdown.</p>
+                    <div class="blog-meta">January 2026 &nbsp;·&nbsp; 6 min read</div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- BLOG -->
-    <section id="blog">
-        <div class="blog-inner">
-            <div class="blog-header">
-                <div>
-                    <p class="section-label">Insights & Tips</p>
-                    <h2 class="section-title">From the Blog</h2>
-                </div>
-                <a href="#" class="blog-see-all">View All Posts →</a>
-            </div>
-
-            <div class="blog-grid">
-                <div class="blog-card">
-                    <div class="blog-thumb blog-thumb-1">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <div class="blog-body">
-                        <p class="blog-cat">SEO</p>
-                        <h3>10 Technical SEO Fixes That Can Double Your Traffic</h3>
-                        <p>Most websites lose rankings due to simple technical issues. Here are the top fixes I use for every client audit.</p>
-                        <div class="blog-meta">March 2026 &nbsp;·&nbsp; 5 min read</div>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <div class="blog-thumb blog-thumb-2">
-                        <i class="fab fa-facebook"></i>
-                    </div>
-                    <div class="blog-body">
-                        <p class="blog-cat">Facebook Ads</p>
-                        <h3>How to Build a High-Converting Meta Ads Funnel in 2026</h3>
-                        <p>Facebook ads still work — but only when your funnel is set up correctly. Here's my step-by-step framework.</p>
-                        <div class="blog-meta">February 2026 &nbsp;·&nbsp; 7 min read</div>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <div class="blog-thumb blog-thumb-3">
-                        <i class="fab fa-google"></i>
-                    </div>
-                    <div class="blog-body">
-                        <p class="blog-cat">Google Ads</p>
-                        <h3>Google Performance Max: Is It Worth It for Small Businesses?</h3>
-                        <p>PMax campaigns promise automation and results — but they're not for everyone. Here's my honest breakdown.</p>
-                        <div class="blog-meta">January 2026 &nbsp;·&nbsp; 6 min read</div>
-                    </div>
-                </div>
+<!-- CONTACT -->
+<section id="contact">
+    <div class="contact-inner">
+        <div class="contact-left">
+            <p class="section-label">Let's Work Together</p>
+            <h2 class="section-title">Get In<br>Touch</h2>
+            <p class="contact-desc">Ready to grow your business? Let's talk about your goals and how I can help you get there.</p>
+            <div class="contact-links">
+                <a href="mailto:jobaahmed600@gmail.com" class="contact-link">
+                    <span class="contact-icon">✉</span>
+                    jobaahmed600@gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/afroza-ahmed" target="_blank" class="contact-link">
+                    <span class="contact-icon" style="font-size:0.75rem">in</span>
+                    LinkedIn Profile
+                </a>
+                <a href="https://wa.me/8801700948614" target="_blank" class="contact-link">
+                    <span class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    </span>
+                    +880 1700-948614
+                </a>
             </div>
         </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-        <div class="contact-inner">
-            <div class="contact-left">
-                <p class="section-label">Let's Work Together</p>
-                <h2 class="section-title">Get In<br>Touch</h2>
-                <p class="contact-desc">Ready to grow your business? Let's talk about your goals and how I can help you get there.</p>
-                <div class="contact-links">
-                    <a href="mailto:jobaahmed600@gmail.com" class="contact-link">
-                        <span class="contact-icon"><i class="fas fa-envelope"></i></span>
-                        jobaahmed600@gmail.com
-                    </a>
-                    <a href="https://www.linkedin.com/in/afroza-ahmed" target="_blank" class="contact-link">
-                        <span class="contact-icon"><i class="fab fa-linkedin"></i></span>
-                        LinkedIn Profile
-                    </a>
-                    <a href="https://wa.me/8801700948614" target="_blank" class="contact-link">
-                        <span class="contact-icon"><i class="fab fa-whatsapp"></i></span>
-                        +880 1700-948614
-                    </a>
-                </div>
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+            <input type="hidden" name="redirect" value="https://web3forms.com/success">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" name="name" placeholder="Your full name" required>
             </div>
+            <div class="form-group">
+                <label>Email Address *</label>
+                <input type="email" name="email" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+                <label>Website / Facebook (Optional)</label>
+                <input type="text" name="website_or_facebook" placeholder="Your website or Facebook link">
+            </div>
+            <div class="form-group">
+                <label>Message</label>
+                <textarea name="message" rows="5" placeholder="How can I help you?" required></textarea>
+            </div>
+            <div>
+                <button type="submit" class="submit-btn">Send Message →</button>
+            </div>
+        </form>
+    </div>
+</section>
 
-            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-                <input type="hidden" name="redirect" value="https://web3forms.com/success">
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2026 <span>Afroza Ahmed</span>. All Rights Reserved.</p>
+</footer>
 
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" name="name" placeholder="Your full name" required>
-                </div>
-                <div class="form-group">
-                    <label>Email Address *</label>
-                    <input type="email" name="email" placeholder="your@email.com" required>
-                </div>
-                <div class="form-group">
-                    <label>Website / Facebook (Optional)</label>
-                    <input type="text" name="website_or_facebook" placeholder="Your website or Facebook link">
-                </div>
-                <div class="form-group">
-                    <label>Message</label>
-                    <textarea name="message" rows="5" placeholder="How can I help you?" required></textarea>
-                </div>
-                <div>
-                    <button type="submit" class="submit-btn">Send Message &rarr;</button>
-                </div>
-            </form>
+</body>
+</html>
