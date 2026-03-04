@@ -102,27 +102,52 @@
         </div>
     </section>
 
-    <section id="contact" class="bg-blue-900 text-white py-20 px-6">
-        <div class="container mx-auto max-w-4xl text-center">
-            <h2 class="text-3xl font-bold mb-8">Ready to grow your business?</h2>
-            <p class="mb-12 text-gray-300">Contact me today to discuss your SEO or Ads campaigns.</p>
-            <div class="flex flex-wrap justify-center gap-8">
-                <a href="mailto:your-email@example.com" class="flex items-center gap-3 text-xl hover:text-blue-300">
+   <section id="contact" class="bg-[#121110] text-white py-20 px-6 font-sans">
+        <div class="container mx-auto max-w-3xl">
+            <h2 class="text-3xl font-bold mb-2">Contact Form</h2>
+            <div class="w-16 h-1 bg-yellow-600 mb-10 rounded"></div> 
+
+            <form action="#" method="POST" class="space-y-6">
+                <div>
+                    <label class="block text-sm font-bold mb-2">Name</label>
+                    <input type="text" placeholder="Enter your name" class="w-full bg-[#0a0a0a] border border-gray-700 rounded p-3 text-white focus:outline-none focus:border-yellow-600" required>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-bold mb-2">Email Address *</label>
+                    <input type="email" placeholder="Enter your email" class="w-full bg-[#0a0a0a] border border-gray-700 rounded p-3 text-white focus:outline-none focus:border-yellow-600" required>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-bold mb-2">Website / Facebook (Optional)</label>
+                    <input type="text" placeholder="Website or Facebook profile link" class="w-full bg-[#0a0a0a] border border-gray-700 rounded p-3 text-white focus:outline-none focus:border-yellow-600">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-bold mb-2">Message</label>
+                    <textarea rows="5" placeholder="How can I help you?" class="w-full bg-[#0a0a0a] border border-gray-700 rounded p-3 text-white focus:outline-none focus:border-yellow-600" required></textarea>
+                </div>
+                
+                <div>
+                    <button type="submit" class="bg-gradient-to-r from-yellow-700 via-yellow-600 to-yellow-700 text-white px-8 py-3 rounded font-bold hover:opacity-90 transition shadow-lg w-full md:w-auto">
+                        Send Message
+                    </button>
+                </div>
+            </form>
+
+            <div class="mt-16 flex flex-wrap justify-center gap-8 border-t border-gray-800 pt-8 text-gray-400">
+                <a href="mailto:your-email@example.com" class="flex items-center gap-3 hover:text-yellow-500 transition">
                     <i class="fas fa-envelope"></i> your-email@example.com
                 </a>
-                <a href="https://linkedin.com/in/yourprofile" class="flex items-center gap-3 text-xl hover:text-blue-300">
+                <a href="https://linkedin.com/in/yourprofile" class="flex items-center gap-3 hover:text-yellow-500 transition">
                     <i class="fab fa-linkedin"></i> LinkedIn
                 </a>
-                <a href="https://wa.me/yournumber" class="flex items-center gap-3 text-xl hover:text-blue-300">
+                <a href="https://wa.me/yournumber" class="flex items-center gap-3 hover:text-yellow-500 transition">
                     <i class="fab fa-whatsapp"></i> WhatsApp
                 </a>
             </div>
         </div>
     </section>
-
-    <footer class="py-8 text-center text-gray-500 text-sm">
-        <p>&copy; 2026 Afroza Joba. All Rights Reserved. Built with ❤️ and Code.</p>
-    </footer>
 
 </body>
 </html>
