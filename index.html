@@ -181,6 +181,21 @@
         }
         .about-stat-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,240,232,0.4); }
         .skills-grid { display: flex; flex-direction: column; gap: 1.4rem; }
+        .tools-wrap { display: flex; flex-direction: column; justify-content: center; }
+        .tools-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;
+        }
+        .tool-item {
+            display: flex; align-items: center; gap: 0.8rem;
+            background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.18);
+            border-radius: 6px; padding: 0.9rem 1.2rem;
+            font-size: 0.85rem; color: rgba(245,240,232,0.75);
+            font-weight: 500; transition: all 0.2s;
+        }
+        .tool-item:hover { background: rgba(201,168,76,0.15); border-color: rgba(201,168,76,0.4); color: var(--white); }
+        .tool-icon { font-size: 1.1rem; flex-shrink: 0; }
+        .tool-item img { width: 28px; height: 28px; object-fit: contain; flex-shrink: 0; filter: brightness(0) invert(1); opacity: 0.85; }
+        .tool-item:hover img { opacity: 1; filter: none; }
         .skill-header { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
         .skill-name { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(245,240,232,0.7); }
         .skill-pct { font-size: 0.8rem; color: var(--gold); font-weight: 700; }
@@ -225,21 +240,47 @@
         }
         .blog-see-all:hover { color: var(--gold); }
         .blog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; }
-        .blog-card { background: var(--white); border-radius: 3px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
-        .blog-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .blog-thumb { height: 160px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
-        .blog-thumb-1 { background: linear-gradient(135deg, #0d0d0d, #1a2a1a); }
-        .blog-thumb-2 { background: linear-gradient(135deg, #0d0d1a, #0d1a2a); }
-        .blog-thumb-3 { background: linear-gradient(135deg, #1a0d0d, #2a1a0d); }
-        .blog-body { padding: 1.8rem; }
-        .blog-cat { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem; }
+        .blog-card {
+            background: var(--white); border-radius: 12px; overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06); display: flex; flex-direction: column;
+        }
+        .blog-card:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(0,0,0,0.12); }
+        .blog-thumb {
+            height: 180px; display: flex; align-items: center; justify-content: center;
+            font-size: 3rem; position: relative; overflow: hidden;
+        }
+        .blog-thumb::after {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.3) 100%);
+        }
+        .blog-thumb-1 { background: linear-gradient(135deg, #0d2010, #1a4a25); }
+        .blog-thumb-2 { background: linear-gradient(135deg, #0d1020, #1a2a4a); }
+        .blog-thumb-3 { background: linear-gradient(135deg, #200d10, #4a1a25); }
+        .blog-body { padding: 2rem; flex: 1; display: flex; flex-direction: column; }
+        .blog-cat {
+            font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+            color: var(--white); background: var(--gold); display: inline-block;
+            padding: 0.25rem 0.7rem; border-radius: 100px; margin-bottom: 1rem; width: fit-content;
+        }
         .blog-card h3 {
             font-family: 'Playfair Display', Georgia, serif;
-            font-size: 1.05rem; font-weight: 700; color: var(--ink); line-height: 1.4; margin-bottom: 0.8rem;
+            font-size: 1.1rem; font-weight: 700; color: var(--ink); line-height: 1.45; margin-bottom: 0.9rem;
         }
-        .blog-card p { color: var(--muted); font-size: 0.85rem; line-height: 1.7; margin-bottom: 1.2rem; }
-        .blog-meta { font-size: 0.75rem; color: rgba(0,0,0,0.35); display: flex; align-items: center; gap: 0.5rem; }
-        .blog-meta::before { content: ''; display: block; width: 20px; height: 1px; background: var(--gold); }
+        .blog-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.75; margin-bottom: 1.4rem; flex: 1; }
+        .blog-meta {
+            font-size: 0.74rem; color: rgba(0,0,0,0.38); display: flex; align-items: center;
+            gap: 0.5rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.07);
+        }
+        .blog-meta::before { content: ''; display: block; width: 16px; height: 1px; background: var(--gold); }
+        .blog-read-more {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+            color: var(--ink); text-decoration: none; margin-top: 1rem;
+            border-bottom: 1px solid var(--gold); padding-bottom: 2px; width: fit-content;
+            transition: color 0.2s;
+        }
+        .blog-read-more:hover { color: var(--gold); }
 
         /* CONTACT */
         #contact { padding: 8rem 2rem; background: var(--cream); }
@@ -411,8 +452,20 @@
                 </div>
             </div>
         </div>
+        <div class="tools-wrap">
+            <p class="section-label" style="margin-bottom:1.5rem;">Tools I Use</p>
+            <div class="tools-grid">
+                <div class="tool-item"><img src="https://cdn.worldvectorlogo.com/logos/ahrefs.svg" alt="Ahrefs"><span>Ahrefs</span></div>
+                <div class="tool-item"><img src="https://cdn.worldvectorlogo.com/logos/semrush.svg" alt="SEMrush"><span>SEMrush</span></div>
+                <div class="tool-item"><img src="https://cdn.worldvectorlogo.com/logos/google-search-console.svg" alt="Search Console"><span>Search Console</span></div>
+                <div class="tool-item"><img src="https://cdn.worldvectorlogo.com/logos/google-analytics-4.svg" alt="Google Analytics"><span>Google Analytics 4</span></div>
+                <div class="tool-item"><img src="https://cdn.worldvectorlogo.com/logos/meta-1.svg" alt="Meta Ads"><span>Meta Ads Manager</span></div>
+                <div class="tool-item"><img src="https://cdn.worldvectorlogo.com/logos/google-ads-2.svg" alt="Google Ads"><span>Google Ads</span></div>
+                <div class="tool-item"><img src="https://cdn.worldvectorlogo.com/logos/screaming-frog.svg" alt="Screaming Frog"><span>Screaming Frog</span></div>
+                <div class="tool-item"><img src="https://cdn.worldvectorlogo.com/logos/surfer-seo.svg" alt="Surfer SEO"><span>Surfer SEO</span></div>
+            </div>
         </div>
-        </div>
+    </div>
     </section>
 
 <!-- RESULTS -->
@@ -455,7 +508,8 @@
                 <div class="blog-body">
                     <p class="blog-cat">SEO</p>
                     <h3>10 Technical SEO Fixes That Can Double Your Traffic</h3>
-                    <p>Most websites lose rankings due to simple technical issues. Here are the top fixes I use for every client audit.</p>
+                    <p>Most websites lose rankings due to simple technical issues that are easy to fix but often overlooked. From broken internal links and slow page speed to missing canonical tags and crawl errors — these hidden problems silently kill your organic traffic. In this article, I break down the exact 10 technical SEO fixes I apply to every client audit, why each one matters, and how to implement them step by step — even if you're not a developer.</p>
+                    <a href="#" class="blog-read-more">Read Article →</a>
                     <div class="blog-meta">March 2026 &nbsp;·&nbsp; 5 min read</div>
                 </div>
             </div>
@@ -464,7 +518,8 @@
                 <div class="blog-body">
                     <p class="blog-cat">Facebook Ads</p>
                     <h3>How to Build a High-Converting Meta Ads Funnel in 2026</h3>
-                    <p>Facebook ads still work — but only when your funnel is set up correctly. Here's my step-by-step framework.</p>
+                    <p>Facebook and Instagram ads still deliver incredible results — but only when your funnel is structured the right way. Most businesses waste their budget targeting cold audiences with purchase-intent ads. In this guide, I walk you through my proven 3-stage Meta Ads funnel: Awareness, Consideration, and Conversion. You'll learn how to set up custom audiences, retargeting sequences, and creatives that actually move people through each stage and turn clicks into paying customers.</p>
+                    <a href="#" class="blog-read-more">Read Article →</a>
                     <div class="blog-meta">February 2026 &nbsp;·&nbsp; 7 min read</div>
                 </div>
             </div>
@@ -473,7 +528,8 @@
                 <div class="blog-body">
                     <p class="blog-cat">Google Ads</p>
                     <h3>Google Performance Max: Is It Worth It for Small Businesses?</h3>
-                    <p>PMax campaigns promise automation and results — but they're not for everyone. Here's my honest breakdown.</p>
+                    <p>Google's Performance Max campaigns promise full automation, wider reach, and better results — but the reality is more nuanced, especially for small businesses with limited budgets. After running PMax campaigns across multiple industries, I've seen both impressive wins and frustrating losses. In this honest breakdown, I share when PMax works, when it doesn't, what data you need before launching, and how to structure your campaigns to maintain control while letting Google's AI do its job.</p>
+                    <a href="#" class="blog-read-more">Read Article →</a>
                     <div class="blog-meta">January 2026 &nbsp;·&nbsp; 6 min read</div>
                 </div>
             </div>
@@ -489,10 +545,7 @@
             <h2 class="section-title">Get In<br>Touch</h2>
             <p class="contact-desc">Ready to grow your business? Let's talk about your goals and how I can help you get there.</p>
             <div class="contact-links">
-                <a href="/cdn-cgi/l/email-protection#83e9ece1e2e2ebeee6e7b5b3b3c3e4eee2eaefade0ecee" class="contact-link">
-                    <span class="contact-icon">✉</span>
-                    <span class="__cf_email__" data-cfemail="066c696467676e6b636230363646616b676f6a2865696b">[email&#160;protected]</span>
-                </a>
+                <a href="#" class="contact-link" id="email-link"><span class="contact-icon">✉</span><span id="email-text"></span></a>
                 <a href="https://www.linkedin.com/in/afroza-ahmed" target="_blank" class="contact-link">
                     <span class="contact-icon" style="font-size:0.75rem">in</span>
                     LinkedIn Profile
