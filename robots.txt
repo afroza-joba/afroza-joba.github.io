@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /.git/
+
+Sitemap: https://afroza-joba.github.io/sitemap.xml
