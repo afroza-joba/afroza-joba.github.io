@@ -335,6 +335,54 @@
         }
         .submit-btn:hover { background: var(--gold); border-color: var(--gold); color: var(--ink); transform: translateY(-2px); }
 
+        .cert-tagline {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.15rem; font-style: italic; color: var(--gold);
+            margin-top: 0.8rem; margin-bottom: 2.5rem;
+            padding-left: 1rem; border-left: 3px solid var(--gold);
+        }
+        .cert-intro-box {
+            display: grid; grid-template-columns: 1.6fr 1fr;
+            gap: 3rem; margin-bottom: 3.5rem;
+            background: var(--white); border-radius: 12px;
+            padding: 2.5rem; box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+            border: 1px solid rgba(201,168,76,0.15);
+        }
+        .cert-intro-text p {
+            color: var(--muted); font-size: 0.93rem;
+            line-height: 1.9; margin-bottom: 1rem; font-weight: 300;
+        }
+        .cert-intro-text p:last-child { margin-bottom: 0; }
+        .cert-skills-box {
+            background: var(--ink); border-radius: 8px;
+            padding: 2rem; display: flex; flex-direction: column;
+        }
+        .cert-skills-title {
+            font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em;
+            text-transform: uppercase; color: var(--gold);
+            margin-bottom: 1.2rem; padding-bottom: 0.8rem;
+            border-bottom: 1px solid rgba(201,168,76,0.25);
+        }
+        .cert-skills-list {
+            list-style: none; padding: 0; margin: 0;
+            display: flex; flex-direction: column; gap: 0.65rem;
+        }
+        .cert-skills-list li {
+            color: rgba(245,240,232,0.8); font-size: 0.88rem;
+            font-weight: 400; display: flex; align-items: center; gap: 0.5rem;
+            padding: 0.5rem 0.8rem; border-radius: 6px;
+            background: rgba(201,168,76,0.07);
+            border: 1px solid rgba(201,168,76,0.12);
+            transition: all 0.2s;
+        }
+        .cert-skills-list li:hover {
+            background: rgba(201,168,76,0.15);
+            color: var(--white);
+        }
+        @media (max-width: 900px) {
+            .cert-intro-box { grid-template-columns: 1fr; gap: 2rem; }
+        }
+
         /* CERTIFICATES */
         #certificates { padding: 8rem 2rem; background: var(--cream); }
         .certificates-inner { max-width: 1100px; margin: 0 auto; }
@@ -679,6 +727,27 @@
         <div class="certificates-header">
             <p class="section-label">Credentials</p>
             <h2 class="section-title">My Certificates</h2>
+            <p class="cert-tagline">Certified SEO Specialist &nbsp;|&nbsp; Helping Businesses Grow with Organic Search.</p>
+
+            <div class="cert-intro-box">
+                <div class="cert-intro-text">
+                    <p>I have successfully completed professional training in Search Engine Optimization (SEO). These certifications represent my dedication to learning modern SEO strategies and improving website visibility on search engines.</p>
+                    <p>Through this training, I gained practical knowledge about keyword research, on-page SEO, technical SEO, website auditing, and search engine ranking techniques. My goal is to apply these skills to help businesses grow their online presence and reach the right audience organically.</p>
+                    <p>These certifications reflect my commitment to continuous learning and staying updated with the latest digital marketing trends.</p>
+                </div>
+                <div class="cert-skills-box">
+                    <p class="cert-skills-title">✦ Skills Covered</p>
+                    <ul class="cert-skills-list">
+                        <li>🔍 Keyword Research</li>
+                        <li>📄 On-Page SEO</li>
+                        <li>⚙️ Technical SEO</li>
+                        <li>🔎 SEO Audit</li>
+                        <li>📊 Google Search Console</li>
+                        <li>📈 Google Analytics</li>
+                        <li>🌐 Website Optimization</li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="certificates-grid">
             <div class="certificate-card">
