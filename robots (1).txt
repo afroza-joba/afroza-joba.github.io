@@ -1,0 +1,18 @@
+# robots.txt - Personal Portfolio Website
+# Website: https://afroza-joba.github.io/
+
+# ✅ সব Search Engine কে অনুমতি দেওয়া হচ্ছে (Google, Bing, Yahoo ইত্যাদি)
+User-agent: *
+Allow: /
+
+# 🚫 Private/Admin folder block
+Disallow: /admin/
+Disallow: /private/
+Disallow: /login/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /*.log$
+Disallow: /*.env$
+
+# ✅ Sitemap
+Sitemap: https://afroza-joba.github.io/sitemap.xml
